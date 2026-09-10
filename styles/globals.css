@@ -3,3 +3,6 @@
 a:focus-visible,.button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
 .formNotice,.formStatus{margin:0;color:var(--muted);line-height:1.55}.formNotice a{color:var(--primary);font-weight:850}
 
+
+.breadcrumbs{display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:.92rem;font-weight:750}.breadcrumbs a{color:#40516a}.breadcrumbs a:hover{color:var(--primary)}.compactTop{padding-top:0}.intentText{max-width:880px}
+

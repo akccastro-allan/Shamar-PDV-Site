@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
+import { JsonLd, organizationJsonLd, softwareJsonLd, websiteJsonLd } from "@/components/site/Seo";
 import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
@@ -27,6 +28,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="pt-BR">
       <body>
+        <JsonLd id="schema-organization" data={organizationJsonLd()} />
+        <JsonLd id="schema-website" data={websiteJsonLd()} />
+        <JsonLd id="schema-software" data={softwareJsonLd()} />
         <SiteHeader />
         {children}
         <SiteFooter />

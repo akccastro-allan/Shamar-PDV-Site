@@ -24,9 +24,10 @@ const allText = chunks.join("\n");
 const forbidden = ["href=\"#\"", "24/7", "PRODUCTION_VALIDATED", "TenantId", "CompanyId", "BranchId"];
 const found = forbidden.filter((term) => allText.includes(term));
 if (found.length) throw new Error(`Forbidden public residue/claim: ${found.join(", ")}`);
-for (const term of ["comercial@shamarpdv.com.br", "mailto:", "Software Ready", "Em validacao", "Passport", "Sob consulta", "Troque de sistema sem comecar do zero", "shamar:conversion", "lead_submit", "PASSPORT_INTEGRATION_GAP", "DOMAIN = DECISION_PENDING", "Search Console"]) {
+for (const term of ["comercial@shamarpdv.com.br", "mailto:", "Software Ready", "Em validacao", "Passport", "Sob consulta", "Troque de sistema sem comecar do zero", "shamar:conversion", "lead_submit", "PASSPORT_INTEGRATION_GAP", "DOMAIN = DECISION_PENDING", "Search Console", "BreadcrumbList", "FAQPage", "SoftwareApplication", "sistema PDV para mercado", "PDV para hortifruti", "sistema para autopecas", "PDV offline", "tabelas de preco", "migrar sistema PDV"] ) {
   if (!allText.includes(term)) throw new Error(`Expected readiness text missing: ${term}`);
 }
 console.log("ROUTE_LINK_SEO_SMOKE: PASS");
 console.log(`ROUTES: ${routes.length}`);
+
 
