@@ -1,8 +1,21 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { trackConversionEvent } from "@/lib/analytics";
 
 const businessTypes = ["Mercado", "Hortifruti", "Autopecas", "Material de construcao", "Varejo", "Atacarejo", "Outro"];
+
+function currentAttribution(source: string) {
+  if (typeof window === "undefined") return { sourcePage: source };
+  const params = new URLSearchParams(window.location.search);
+  return {
+    sourcePage: source,
+    cta: params.get("origem") ?? source,
+    campaign: params.get("utm_campaign") ?? undefined,
+    medium: params.get("utm_medium") ?? undefined,
+    source: params.get("utm_source") ?? undefined
+  };
+}
 
 export function LeadForm({ source = "site" }: { source?: string }) {
   const [status, setStatus] = useState<string>("");
@@ -19,9 +32,14 @@ export function LeadForm({ source = "site" }: { source?: string }) {
       return;
     }
 
+    const attribution = currentAttribution(source);
     const body = encodeURIComponent([
       "Quero conhecer o Shamar PDV.",
-      `Origem: ${source}`,
+      `Origem: ${attribution.sourcePage}`,
+      `CTA: ${attribution.cta ?? "Nao informado"}`,
+      `Campanha: ${attribution.campaign ?? "Nao informado"}`,
+      `Midia: ${attribution.medium ?? "Nao informado"}`,
+      `Fonte: ${attribution.source ?? "Nao informado"}`,
       `Nome: ${data.get("nome")}`,
       `Empresa: ${data.get("empresa")}`,
       `Contato: ${data.get("contato")}`,
@@ -30,6 +48,7 @@ export function LeadForm({ source = "site" }: { source?: string }) {
       `Caixas/unidades: ${data.get("caixas") || "Nao informado"}`
     ].join("\n"));
 
+    trackConversionEvent("lead_submit", attribution);
     setStatus("Abrindo seu e-mail para enviar o contato comercial.");
     window.location.href = `mailto:comercial@shamarpdv.com.br?subject=${subject}&body=${body}`;
   }

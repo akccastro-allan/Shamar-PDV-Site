@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-
-const base = "https://shamarpdv.com.br";
+import { absoluteUrl } from "@/lib/site-url";
 
 export function pageMetadata(title: string, description: string, path: string): Metadata {
-  const url = `${base}${path}`;
+  const url = absoluteUrl(path);
   return {
     title,
     description,

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
-
-const siteUrl = "https://shamarpdv.com.br";
+import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

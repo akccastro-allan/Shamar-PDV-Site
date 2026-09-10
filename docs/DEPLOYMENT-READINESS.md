@@ -30,3 +30,10 @@ Deployment provider is pending business/infra decision. The repository is ready 
 ## Safety
 
 The site has no fake authentication, no CRM integration, no payment provider integration, no customer data and no production secrets.
+
+## GitHub Pages
+
+Current deployment fallback uses GitHub Pages from main with static export in out/.
+
+Provider URL: https://akccastro-allan.github.io/Shamar-PDV-Site/
+

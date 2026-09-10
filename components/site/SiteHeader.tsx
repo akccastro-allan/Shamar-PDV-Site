@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { navItems } from "@/lib/site-data";
+import { trackConversionEvent } from "@/lib/analytics";
 
 export function SiteHeader() {
   return (
@@ -12,8 +15,8 @@ export function SiteHeader() {
         {navItems.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
       </nav>
       <div className="headerActions">
-        <Link className="button ghost" href="/login">Entrar</Link>
-        <Link className="button primary" href="/demonstracao">Agendar demonstracao</Link>
+        <Link className="button ghost" href="/login" onClick={() => trackConversionEvent("login_click", { sourcePage: "header", cta: "Entrar" })}>Entrar</Link>
+        <Link className="button primary" href="/demonstracao?origem=header" onClick={() => trackConversionEvent("agendar_demo", { sourcePage: "header", cta: "Agendar demonstracao" })}>Agendar demonstracao</Link>
       </div>
     </header>
   );
