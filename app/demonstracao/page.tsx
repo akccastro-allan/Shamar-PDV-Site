@@ -1,2 +1,7 @@
+import { LeadForm } from "@/components/site/LeadForm";
 import { PageHero } from "@/components/site/PageHero";
-export default function DemonstracaoPage(){return <main><PageHero eyebrow="Demonstracao" title="Agende uma conversa para ver o PDV no fluxo da sua loja." text="Ainda sem backend de agenda: este formulario prepara o handoff comercial sem inventar integracao." ctaHref="/contato" cta="Falar com vendas"/><section className="section"><form className="card form"><label>Nome<input className="input" name="nome" placeholder="Seu nome" /></label><label>Loja<input className="input" name="loja" placeholder="Nome da loja" /></label><label>Contato<input className="input" name="contato" placeholder="Telefone ou e-mail" /></label><button className="button primary" type="button">Enviar interesse</button></form></section></main>}
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Agendar demonstracao", "Agende uma demonstracao comercial do Shamar PDV sem formulario longo ou promessa de integracao inexistente.", "/demonstracao");
+
+export default function DemonstracaoPage(){return <main><PageHero eyebrow="Demonstracao" title="Agende uma conversa para ver o PDV no fluxo da sua loja." text="Formulario curto para iniciar o contato. Sem backend comercial conectado ainda; o handoff autorizado e por e-mail." ctaHref="/contato" cta="Falar com vendas"/><section className="section"><LeadForm source="demonstracao" /></section></main>}

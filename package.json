@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit",
+    "validate:site": "node scripts/validate-site-readiness.cjs"
   },
   "engines": {
     "node": ">=24.0.0"

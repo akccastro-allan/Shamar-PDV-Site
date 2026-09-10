@@ -17,7 +17,7 @@ export const navItems = [
 export const segments = [
   { href: "/segmentos/mercado", title: "Mercado", text: "Venda rapida, caixa simples, produtos por codigo de barras e resumo do dia." },
   { href: "/segmentos/hortifruti", title: "Hortifruti", text: "Produtos KG, etiquetas de balanca, favoritos e operacao de alto giro." },
-  { href: "/segmentos/autopecas", title: "Autopecas", text: "Busca por nome/codigo, clientes, orcamentos e controle de estoque sem complicar o balcão." },
+  { href: "/segmentos/autopecas", title: "Autopecas", text: "Busca por nome/codigo, clientes, orcamentos e controle de estoque sem complicar o balcao." },
   { href: "/segmentos/material-de-construcao", title: "Material de construcao", text: "Venda por apresentacoes, pacotes, caixas e historico para atendimento recorrente." },
   { href: "/segmentos/varejo", title: "Varejo", text: "Rotina de loja com produtos, compras, caixa, clientes e backup automatico." },
   { href: "/segmentos/atacarejo", title: "Atacarejo", text: "Tabelas de preco, embalagens, codigos multiplos e operacao local resiliente." }
@@ -35,13 +35,14 @@ export const capabilityGroups: CapabilityGroup[] = [
   { title: "Integracoes", text: "Seguro por padrao e sem promessa falsa.", items: ["ERP/fiscal por handoff", "Provider de pagamento configuravel", "Migracao de dados", "Saude e diagnosticos"] }
 ];
 
-export const compatibility = [
-  { name: "Operacao Single local", state: "Homologado", detail: "Software validado por gates automatizados; validacao fisica segue por candidato." },
-  { name: "Backup e restauracao", state: "Software Ready", detail: "Fluxo implementado; restauracao real deve ser provada no ambiente piloto." },
-  { name: "Leitor por teclado", state: "Software Ready", detail: "Entrada por teclado/USB comum preservada." },
-  { name: "Impressora e gaveta", state: "Em validacao", detail: "Software preparado; cada hardware exige smoke fisico." },
-  { name: "Balanca e etiqueta pesada", state: "Software Ready", detail: "Etiqueta de balanca suportada; balanca direta depende do modelo." },
+export const compatibility: ReadonlyArray<{ name: string; state: "Homologado" | "Smoke fisico aprovado" | "Software Ready" | "Em validacao" | "Nao testado"; detail: string }> = [
+  { name: "Leitor", state: "Software Ready", detail: "Entrada por teclado/USB comum preservada; modelos fisicos devem ser testados no piloto." },
+  { name: "Impressora", state: "Em validacao", detail: "Fluxo de impressao preparado; cada modelo exige smoke fisico." },
+  { name: "Gaveta", state: "Em validacao", detail: "Abertura por caminho de impressora/ESC-POS quando suportado; depende do conjunto fisico." },
+  { name: "Balanca", state: "Software Ready", detail: "Etiqueta pesada suportada; balanca direta depende de modelo e protocolo." },
+  { name: "Segundo monitor/display", state: "Software Ready", detail: "Interface de display do cliente preparada; validacao fisica depende do ambiente." },
   { name: "PinPad/TEF", state: "Em validacao", detail: "Diagnostico e fronteira prontos; homologacao depende de SDK/provedor." }
 ] as const;
 
-export const routes = ["/", "/produto", "/recursos", "/segmentos", "/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/precos", "/migracao", "/compatibilidade", "/demonstracao", "/ajuda", "/blog", "/contato", "/login"];
+export const routes = ["/", "/produto", "/recursos", "/segmentos", "/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/precos", "/migracao", "/compatibilidade", "/demonstracao", "/ajuda", "/blog", "/contato", "/login", "/privacidade"];
+

@@ -1,2 +1,7 @@
+import { LeadForm } from "@/components/site/LeadForm";
 import { PageHero } from "@/components/site/PageHero";
-export default function ContatoPage(){return <main><PageHero eyebrow="Contato" title="Fale com vendas." text="Conte o tamanho da loja, quantidade de caixas e se precisa migrar dados." ctaHref="mailto:comercial@shamarpdv.com.br" cta="Enviar e-mail"/><section className="section"><form className="card form"><label>Nome<input className="input" /></label><label>E-mail ou telefone<input className="input" /></label><label>Mensagem<textarea className="textarea" /></label><a className="button primary" href="mailto:comercial@shamarpdv.com.br?subject=Quero%20conhecer%20o%20Shamar%20PDV">Falar com vendas</a></form></section></main>}
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Contato comercial", "Fale com vendas do Shamar PDV para conhecer o produto, agendar demonstracao ou pedir uma proposta.", "/contato");
+
+export default function ContatoPage(){return <main><PageHero eyebrow="Contato" title="Fale com vendas." text="Conte o tamanho da loja, quantidade de caixas e se precisa migrar dados. O contato abre seu e-mail com as informacoes preenchidas; nao ha CRM fake neste site." ctaHref="mailto:comercial@shamarpdv.com.br" cta="Enviar e-mail"/><section className="section"><LeadForm source="contato" /></section></main>}
