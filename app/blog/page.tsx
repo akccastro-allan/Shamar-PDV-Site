@@ -1,0 +1,2 @@
+import { PageHero } from "@/components/site/PageHero";
+export default function BlogPage(){return <main><PageHero eyebrow="Blog" title="Guias praticos para loja vender melhor." text="Espaco editorial preparado para conteudo de PDV, estoque, migracao, backup e rotina de caixa."/><section className="section grid cols3">{["Como escolher um PDV leve","Por que backup precisa de restauracao","Migracao sem bagunca"].map((p)=><article className="card" key={p}><span className="pill">Guia</span><h3>{p}</h3><p>Artigo em preparacao.</p></article>)}</section></main>}

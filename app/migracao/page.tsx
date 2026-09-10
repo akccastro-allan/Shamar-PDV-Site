@@ -1,0 +1,3 @@
+import { CTA } from "@/components/site/CTA";
+import { PageHero } from "@/components/site/PageHero";
+export default function MigracaoPage(){return <main><PageHero eyebrow="Migracao" title="Troque de sistema sem comecar do zero." text="A migracao usa pipeline controlado para preservar identidade de origem, revisar inconsistencias e evitar importacao cega."/><section className="section grid cols3"><div className="card"><h3>Coletar</h3><p>Entendemos a origem: arquivos, tabelas ou exportacoes disponiveis.</p></div><div className="card"><h3>Revisar</h3><p>Mostramos duplicidades, campos ausentes e pontos que precisam de decisao.</p></div><div className="card"><h3>Importar</h3><p>Dados entram pelo caminho seguro do PDV, sem atalhos no banco.</p></div></section><CTA /></main>}
