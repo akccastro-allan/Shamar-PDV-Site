@@ -21,11 +21,16 @@ function walk(p) {
 for (const entry of ["app", "components", "lib", "docs", "README.md"]) walk(path.join(process.cwd(), entry));
 const allText = chunks.join("\n");
 
-const forbidden = ["href=\"#\"", "24/7", "PRODUCTION_VALIDATED", "TenantId", "CompanyId", "BranchId"];
+const forbidden = ["href=\"#\"", "24/7", "PRODUCTION_VALIDATED", "TenantId", "CompanyId", "BranchId", "AggregateRating", "\"Offer\""];
 const found = forbidden.filter((term) => allText.includes(term));
 if (found.length) throw new Error(`Forbidden public residue/claim: ${found.join(", ")}`);
 for (const term of ["comercial@shamarpdv.com.br", "mailto:", "Software Ready", "Em validacao", "Passport", "Sob consulta", "Troque de sistema sem comecar do zero", "shamar:conversion", "lead_submit", "PASSPORT_INTEGRATION_GAP", "DOMAIN = DECISION_PENDING", "Search Console", "BreadcrumbList", "FAQPage", "SoftwareApplication", "sistema PDV para mercado", "PDV para hortifruti", "sistema para autopecas", "PDV offline", "tabelas de preco", "migrar sistema PDV"] ) {
   if (!allText.includes(term)) throw new Error(`Expected readiness text missing: ${term}`);
+}
+for (const route of ["/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/migracao", "/compatibilidade", "/precos", "/produto", "/recursos"]) {
+  const file = route === "/" ? "app/page.tsx" : `app${route}/page.tsx`;
+  const text = fs.readFileSync(path.join(process.cwd(), file), "utf8");
+  if (!/metadata|segmentMetadata/.test(text)) throw new Error(`Missing metadata export/reference: ${route}`);
 }
 console.log("ROUTE_LINK_SEO_SMOKE: PASS");
 console.log(`ROUTES: ${routes.length}`);

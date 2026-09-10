@@ -97,7 +97,6 @@ export function softwareJsonLd() {
     name: "Shamar PDV",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Windows",
-    description: "Sistema PDV para venda, caixa, produtos, estoque, clientes, compras, precos, backup e operacao local resiliente.",
-    offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", priceCurrency: "BRL" }, availability: "https://schema.org/InStock" }
+    description: "Sistema PDV para venda, caixa, produtos, estoque, clientes, compras, precos, backup e operacao local resiliente."
   };
 }
