@@ -1,0 +1,7 @@
+import { CTA } from "@/components/site/CTA";
+import { PageHero } from "@/components/site/PageHero";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata("Planos e precos", "Estrutura comercial do Shamar PDV para Single, Network e piloto assistido, sem valores inventados.", "/precos");
+
+export default function PrecosPage(){return <main><PageHero eyebrow="Planos e precos" title="Escolha o caminho certo sem surpresa comercial." text="Valores finais ainda dependem de proposta. Enquanto isso, a pagina mostra para quem serve cada oferta, o que entra na conversa e como a implantacao e conduzida."/><section className="section grid cols3"><div className="card"><h3>Single</h3><p>Para loja que precisa de PDV local, caixa rapido, produtos, estoque, clientes, compras, historico e backup.</p><ul><li>Operacao local</li><li>Venda e caixa</li><li>Backup e restauracao</li></ul><strong>Sob consulta</strong></div><div className="card"><h3>Network</h3><p>Para operacao com mais de um caixa em rede local e persistencia PostgreSQL.</p><ul><li>Caixas em rede</li><li>Dados centralizados localmente</li><li>Mesma autoridade comercial</li></ul><strong>Sob consulta</strong></div><div className="card"><h3>Piloto assistido</h3><p>Para validar implantacao, migracao, rotinas, backup e perifericos disponiveis antes de ampliar.</p><ul><li>Checklist de entrada</li><li>Migracao analisada</li><li>Smoke operacional</li></ul><strong>Sob consulta</strong></div></section><CTA label="Receber proposta" source="precos" /></main>}

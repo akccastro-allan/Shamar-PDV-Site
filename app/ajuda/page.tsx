@@ -1,0 +1,3 @@
+import { CTA } from "@/components/site/CTA";
+import { PageHero } from "@/components/site/PageHero";
+export default function AjudaPage(){return <main><PageHero eyebrow="Ajuda" title="Ajuda simples para comecar e operar sem susto." text="Conteudo inicial para instalacao, venda, backup, restauracao, migracao e suporte."/><section className="section grid cols2"><div className="card"><h3>Primeiros passos</h3><p>Configurar loja, operador, caixa, produtos e backup.</p></div><div className="card"><h3>Suporte</h3><p>Diagnosticos seguros, sem shell remoto ou coleta de dados sensiveis.</p></div></section><CTA /></main>}

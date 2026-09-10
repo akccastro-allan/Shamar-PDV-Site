@@ -1,11 +1,15 @@
 # Shamar PDV Site
 
-Commercial website repository for Shamar PDV.
+Site comercial publico do Shamar PDV.
 
-This repository is intentionally separate from the operational SHAMAR-PDV product repository.
+## Rodar localmente
 
-Rules:
-- do not add secrets
-- do not add real client data
-- do not add .env.local
-- keep the site lightweight and marketing-focused
+```bash
+npm install
+npm run typecheck
+npm run build
+```
+
+## Escopo
+
+Este repositorio contem apenas o site publico. Nao contem autenticacao real, dados de cliente, secrets, backend comercial ou integracao Passport implementada.
