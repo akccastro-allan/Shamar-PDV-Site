@@ -49,7 +49,7 @@ export function LeadForm({ source = "site" }: { source?: string }) {
     ].join("\n"));
 
     trackConversionEvent("lead_submit", attribution);
-    setStatus("Abrindo seu e-mail para enviar o contato comercial.");
+    setStatus("Abrindo seu e-mail. Se ele nao abrir, envie para comercial@shamarpdv.com.br.");
     window.location.href = `mailto:comercial@shamarpdv.com.br?subject=${subject}&body=${body}`;
   }
 
@@ -63,6 +63,7 @@ export function LeadForm({ source = "site" }: { source?: string }) {
       <label htmlFor="caixas">Quantidade de caixas/unidades<input id="caixas" name="caixas" className="input" inputMode="numeric" /></label>
       <p className="formNotice">Usaremos estes dados apenas para responder ao seu interesse comercial. Veja a <a href="/privacidade">privacidade</a>.</p>
       <button className="button primary" type="submit">Falar com vendas</button>
+      <p className="formNotice">Depois do envio, retornamos com perguntas objetivas sobre loja, caixas, migracao e perifericos.</p>
       <p className="formStatus" role="status" aria-live="polite">{status}</p>
     </form>
   );

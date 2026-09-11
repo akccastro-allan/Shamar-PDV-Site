@@ -16,6 +16,12 @@ type Segment = {
   faqs: Array<{ question: string; answer: string }>;
 };
 
+const objectionLinks = [
+  { href: "/migracao", label: "Consigo migrar?" },
+  { href: "/compatibilidade", label: "E meus equipamentos?" },
+  { href: "/precos", label: "Como comeco?" }
+];
+
 export const segmentPages: Record<Segment["slug"], Segment> = {
   mercado: {
     slug: "mercado",
@@ -142,6 +148,10 @@ export function SegmentSeoPage({ segment }: { segment: Segment }) {
       </section>
       <section className="section grid cols3">
         {segment.capabilities.map((item) => <article className="card" key={item.title}><h3>{item.title}</h3><p>{item.text}</p></article>)}
+      </section>
+      <section className="section split">
+        <div><p className="eyebrow">Antes de decidir</p><h2>Respostas claras para reduzir risco.</h2><p className="lead">A loja entende migracao, operacao local, hardware e primeiro passo comercial sem promessa exagerada.</p></div>
+        <div className="card"><h3>Objeções comuns</h3><ul><li>Dados existentes podem ser avaliados antes da troca.</li><li>A operacao local suportada nao depende de sucesso falso de servicos externos.</li><li>Equipamentos entram por status honesto: Homologado, Software Ready ou Em validacao.</li></ul><div className="routeLinks">{objectionLinks.map((link) => <Link className="button secondary" href={`${link.href}?origem=${segment.slug}`} key={link.href}>{link.label}</Link>)}</div></div>
       </section>
       <section className="section"><p className="eyebrow">Continue explorando</p><div className="routeLinks">{segment.links.map((link) => <Link className="button secondary" href={link.href} key={link.href}>{link.label}</Link>)}</div></section>
       <FaqSection items={segment.faqs} />
