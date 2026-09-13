@@ -31,7 +31,7 @@ export const segmentPages: Record<Segment["slug"], Segment> = {
     intent: "Para quem procura sistema PDV para mercado, caixa de supermercado pequeno ou controle de estoque para mercearia.",
     pains: ["Fila no caixa quando o operador precisa clicar demais", "Produto sem codigo claro ou estoque desatualizado", "Dificuldade para separar dinheiro fisico de Pix e cartao", "Troca de sistema com medo de perder cadastro"],
     capabilities: [
-      { title: "Scanner, teclado e F9", text: "A rotina principal continua simples: passar produto, conferir total, receber e seguir para a proxima venda." },
+      { title: "Scanner, teclado e atalhos atuais", text: "A rotina principal continua simples: passar produto, consultar com F9 quando precisar, pagar com PageUp e seguir para a proxima venda." },
       { title: "Estoque e compras", text: "Produtos, compras, entrada por XML quando aplicavel e alertas de estoque baixo ajudam a loja a repor sem virar ERP." },
       { title: "Caixa com separacao por meio", text: "Dinheiro fisico, Pix, cartao e voucher aparecem de forma operacional, sem inflar a gaveta." }
     ],

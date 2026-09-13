@@ -9,7 +9,7 @@ export const metadata = pageMetadata("Sistema PDV para loja, estoque, caixa e op
 const crumbs = [{ name: "Inicio", href: "/" }, { name: "Produto", href: "/produto" }];
 
 const productCapabilities = [
-  { title: "Checkout rapido", text: "Scanner, busca por codigo ou nome, quantidade UN/KG e F9 para receber sem dialogos desnecessarios." },
+  { title: "Checkout rapido", text: "Scanner, busca por codigo ou nome, quantidade UN/KG, F9 para consulta produto/preco, PageUp para pagamento e F12 para mais opcoes." },
   { title: "Produtos e estoque", text: "Cadastro comercial, embalagens, codigos multiplos, estoque baixo, compras e inventario preservando autoridade de estoque." },
   { title: "Precos e tabelas", text: "Varejo, Atacado, Parceiro, promocoes com validade e revisao por custo sem reescrever vendas antigas." },
   { title: "Clientes e crediario", text: "Cliente opcional, historico e rotinas simples de a receber quando habilitadas no PDV." },

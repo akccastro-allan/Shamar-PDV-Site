@@ -24,7 +24,7 @@ export const segments = [
 ] as const;
 
 export const capabilityGroups: CapabilityGroup[] = [
-  { title: "Venda e caixa", text: "Fluxo de venda direto para o operador.", items: ["Leitura por codigo de barras", "F9 para pagamento", "Dinheiro, Pix manual e cartao manual quando configurados", "Historico e reimpressao"] },
+  { title: "Venda e caixa", text: "Fluxo de venda direto para o operador.", items: ["Leitura por codigo de barras", "F9 consulta produto/preco", "PageUp para pagamento e F12 para mais opcoes", "Dinheiro, Pix manual e cartao manual quando configurados", "Historico e reimpressao"] },
   { title: "Produtos e estoque", text: "Cadastro comercial e movimentacao controlada.", items: ["Produtos UN e KG", "Embalagens e codigos multiplos", "Estoque baixo e inventario", "Compras e entrada por XML NF-e"] },
   { title: "Clientes", text: "Identificacao sem travar a venda.", items: ["Cliente opcional", "Crediario quando habilitado", "Historico operacional", "Tabelas de preco por perfil"] },
   { title: "Compras", text: "Entrada simples para manter o estoque correto.", items: ["Fornecedores", "Compras", "Importacao XML NF-e", "Custo operacional para revisao de preco"] },

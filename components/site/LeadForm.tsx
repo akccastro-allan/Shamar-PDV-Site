@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from "react";
 import { trackConversionEvent } from "@/lib/analytics";
 
 const businessTypes = ["Mercado", "Hortifruti", "Autopecas", "Material de construcao", "Varejo", "Atacarejo", "Outro"];
+const objectiveTypes = ["Pedir proposta", "Agendar demonstracao", "Solicitar piloto assistido"];
 
 function currentAttribution(source: string) {
   if (typeof window === "undefined") return { sourcePage: source };
@@ -25,16 +26,16 @@ export function LeadForm({ source = "site" }: { source?: string }) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const required = ["nome", "empresa", "contato", "tipo"];
+    const required = ["nome", "empresa", "contato", "tipo", "objetivo"];
     const missing = required.some((key) => !String(data.get(key) ?? "").trim());
     if (missing) {
-      setStatus("Preencha nome, empresa, contato e tipo de negocio para continuarmos.");
+      setStatus("Preencha nome, empresa, contato, tipo de negocio e objetivo para continuarmos.");
       return;
     }
 
     const attribution = currentAttribution(source);
     const body = encodeURIComponent([
-      "Quero conhecer o Shamar PDV.",
+      "Quero implantar ou avaliar o Shamar PDV.",
       `Origem: ${attribution.sourcePage}`,
       `CTA: ${attribution.cta ?? "Nao informado"}`,
       `Campanha: ${attribution.campaign ?? "Nao informado"}`,
@@ -44,10 +45,14 @@ export function LeadForm({ source = "site" }: { source?: string }) {
       `Empresa: ${data.get("empresa")}`,
       `Contato: ${data.get("contato")}`,
       `Tipo de negocio: ${data.get("tipo")}`,
+      `Objetivo: ${data.get("objetivo")}`,
       `Cidade/regiao: ${data.get("cidade") || "Nao informado"}`,
       `Caixas/unidades: ${data.get("caixas") || "Nao informado"}`
     ].join("\n"));
 
+    const objective = String(data.get("objetivo") ?? "");
+    const eventName = objective === "Agendar demonstracao" ? "agendar_demo" : objective === "Solicitar piloto assistido" ? "piloto_assistido" : "pedir_proposta";
+    trackConversionEvent(eventName, attribution);
     trackConversionEvent("lead_submit", attribution);
     setStatus("Abrindo seu e-mail. Se ele nao abrir, envie para comercial@shamarpdv.com.br.");
     window.location.href = `mailto:comercial@shamarpdv.com.br?subject=${subject}&body=${body}`;
@@ -59,6 +64,7 @@ export function LeadForm({ source = "site" }: { source?: string }) {
       <label htmlFor="empresa">Empresa<input required id="empresa" name="empresa" className="input" autoComplete="organization" /></label>
       <label htmlFor="contato">Contato<input required id="contato" name="contato" className="input" placeholder="Telefone ou e-mail" autoComplete="email" /></label>
       <label htmlFor="tipo">Tipo de negocio<select required id="tipo" name="tipo" className="select" defaultValue=""><option value="" disabled>Selecione</option>{businessTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
+      <label htmlFor="objetivo">Objetivo<select required id="objetivo" name="objetivo" className="select" defaultValue=""><option value="" disabled>Selecione</option>{objectiveTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
       <label htmlFor="cidade">Cidade/regiao<input id="cidade" name="cidade" className="input" autoComplete="address-level2" /></label>
       <label htmlFor="caixas">Quantidade de caixas/unidades<input id="caixas" name="caixas" className="input" inputMode="numeric" /></label>
       <p className="formNotice">Usaremos estes dados apenas para responder ao seu interesse comercial. Veja a <a href="/privacidade">privacidade</a>.</p>

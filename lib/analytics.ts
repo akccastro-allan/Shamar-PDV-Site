@@ -1,8 +1,11 @@
 export type ConversionEventName =
   | "page_view"
+  | "quero_implantar"
   | "quero_conhecer"
   | "agendar_demo"
   | "falar_com_vendas"
+  | "pedir_proposta"
+  | "piloto_assistido"
   | "preco_view"
   | "migracao_view"
   | "compatibilidade_view"
