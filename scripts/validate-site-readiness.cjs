@@ -21,13 +21,50 @@ function walk(p) {
 for (const entry of ["app", "components", "lib", "docs", "README.md"]) walk(path.join(process.cwd(), entry));
 const allText = chunks.join("\n");
 
-const forbidden = ["href=\"#\"", "24/7", "PRODUCTION_VALIDATED", "TenantId", "CompanyId", "BranchId", "AggregateRating", "\"Offer\""];
+const forbidden = ["href=\"#\"", "24/7", "PRODUCTION_VALIDATED", "TenantId", "CompanyId", "BranchId", "AggregateRating", "\"Offer\"", "H-T31", "H5", "P0", "PostgreSQL test"];
 const found = forbidden.filter((term) => allText.includes(term));
 if (found.length) throw new Error(`Forbidden public residue/claim: ${found.join(", ")}`);
-for (const term of ["comercial@shamarpdv.com.br", "mailto:", "Software Ready", "Em validacao", "Passport", "Sob consulta", "Troque de sistema sem comecar do zero", "shamar:conversion", "lead_submit", "PASSPORT_INTEGRATION_GAP", "DOMAIN = DECISION_PENDING", "Search Console", "BreadcrumbList", "FAQPage", "SoftwareApplication", "sistema PDV para mercado", "PDV para hortifruti", "sistema para autopecas", "PDV offline", "tabelas de preco", "migrar sistema PDV"] ) {
+
+const expected = [
+  "comercial@shamarpdv.com.br",
+  "mailto:",
+  "Software Ready",
+  "Em validação",
+  "Passport",
+  "Sob consulta",
+  "Troque de sistema sem começar do zero",
+  "Você não precisa recadastrar tudo na mão",
+  "shamar:conversion",
+  "lead_submit",
+  "PASSPORT_INTEGRATION_GAP",
+  "DOMAIN = DECISION_PENDING",
+  "Search Console",
+  "BreadcrumbList",
+  "FAQPage",
+  "SoftwareApplication",
+  "sistema PDV para mercado",
+  "PDV para hortifruti",
+  "sistema para autopeças",
+  "PDV para autopeças",
+  "PDV offline",
+  "tabelas de preço",
+  "migrar sistema PDV",
+  "Product Master",
+  "EAN/GTIN",
+  "referência de fabricante",
+  "referência de fornecedor",
+  "perfil de pneu",
+  "equivalências",
+  "NCM, CEST e origem",
+  "sem prometer que o PDV vira motor fiscal completo",
+  "Oficina, diagnóstico e serviço pertencem a outro domínio/produto",
+  "operação local suportada",
+  "piloto assistido"
+];
+for (const term of expected) {
   if (!allText.includes(term)) throw new Error(`Expected readiness text missing: ${term}`);
 }
-for (const term of ["Serve para loja pequena?", "Vou perder meus dados", "E meus equipamentos?", "Consigo migrar?", "Falar sobre Single", "Falar sobre Network", "Agendar demonstracao", "Se ele nao abrir"]) {
+for (const term of ["Serve para loja pequena?", "Vou perder meus dados", "E meus equipamentos?", "Consigo migrar?", "Falar sobre Single", "Falar sobre Network", "Agendar demonstração", "Se ele não abrir"]) {
   if (!allText.includes(term)) throw new Error(`Expected conversion hardening text missing: ${term}`);
 }
 for (const route of ["/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/migracao", "/compatibilidade", "/precos", "/produto", "/recursos"]) {

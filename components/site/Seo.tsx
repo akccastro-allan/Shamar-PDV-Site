@@ -14,7 +14,7 @@ export type FaqItem = {
 
 export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   return (
-    <nav className="breadcrumbs" aria-label="Caminho da pagina">
+    <nav className="breadcrumbs" aria-label="Caminho da página">
       {items.map((item, index) => (
         <span key={item.href}>
           {index > 0 ? <span aria-hidden="true">/</span> : null}
@@ -28,7 +28,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
 export function FaqSection({ items }: { items: FaqItem[] }) {
   return (
     <section className="section">
-      <p className="eyebrow">Duvidas comuns</p>
+      <p className="eyebrow">Dúvidas comuns</p>
       <div className="grid cols2">
         {items.map((item) => (
           <article className="card" key={item.question}>
@@ -97,6 +97,6 @@ export function softwareJsonLd() {
     name: "Shamar PDV",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Windows",
-    description: "Sistema PDV para venda, caixa, produtos, estoque, clientes, compras, precos, backup e operacao local resiliente."
+    description: "Sistema PDV para venda, caixa, produtos, estoque, clientes, compras, preços, backup e operação local resiliente."
   };
 }

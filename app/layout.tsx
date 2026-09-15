@@ -8,14 +8,14 @@ import { siteUrl } from "@/lib/site-url";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Shamar PDV | PDV simples, completo e leve para vender todos os dias",
+    default: "Shamar PDV | Sistema PDV simples, completo e leve para vender todos os dias",
     template: "%s | Shamar PDV"
   },
-  description: "Shamar PDV ajuda lojas a vender com rapidez, controlar produtos, estoque, clientes, caixa, backup e operacao local com seguranca.",
+  description: "Shamar PDV ajuda lojas a vender com rapidez, controlar produtos, estoque, clientes, caixa, backup e operação local com segurança.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Shamar PDV",
-    description: "Simples para o usuario. Completo por baixo. Leve na operacao. Seguro por padrao.",
+    description: "Simples para o usuário. Completo por baixo. Leve na operação. Seguro por padrão.",
     url: siteUrl,
     siteName: "Shamar PDV",
     locale: "pt_BR",

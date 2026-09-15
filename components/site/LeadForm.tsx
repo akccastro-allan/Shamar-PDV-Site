@@ -3,8 +3,8 @@
 import { FormEvent, useMemo, useState } from "react";
 import { trackConversionEvent } from "@/lib/analytics";
 
-const businessTypes = ["Mercado", "Hortifruti", "Autopecas", "Material de construcao", "Varejo", "Atacarejo", "Outro"];
-const objectiveTypes = ["Pedir proposta", "Agendar demonstracao", "Solicitar piloto assistido"];
+const businessTypes = ["Mercado", "Hortifruti", "Autopeças", "Material de construção", "Varejo", "Atacarejo", "Outro"];
+const objectiveTypes = ["Pedir proposta", "Agendar demonstração", "Solicitar piloto assistido"];
 
 function currentAttribution(source: string) {
   if (typeof window === "undefined") return { sourcePage: source };
@@ -29,32 +29,32 @@ export function LeadForm({ source = "site" }: { source?: string }) {
     const required = ["nome", "empresa", "contato", "tipo", "objetivo"];
     const missing = required.some((key) => !String(data.get(key) ?? "").trim());
     if (missing) {
-      setStatus("Preencha nome, empresa, contato, tipo de negocio e objetivo para continuarmos.");
+      setStatus("Preencha nome, empresa, contato, tipo de negócio e objetivo para continuarmos.");
       return;
     }
 
     const attribution = currentAttribution(source);
     const body = encodeURIComponent([
-      "Quero implantar ou avaliar o Shamar PDV.",
+      "Quero conhecer, implantar ou avaliar o Shamar PDV.",
       `Origem: ${attribution.sourcePage}`,
-      `CTA: ${attribution.cta ?? "Nao informado"}`,
-      `Campanha: ${attribution.campaign ?? "Nao informado"}`,
-      `Midia: ${attribution.medium ?? "Nao informado"}`,
-      `Fonte: ${attribution.source ?? "Nao informado"}`,
+      `CTA: ${attribution.cta ?? "Não informado"}`,
+      `Campanha: ${attribution.campaign ?? "Não informado"}`,
+      `Mídia: ${attribution.medium ?? "Não informado"}`,
+      `Fonte: ${attribution.source ?? "Não informado"}`,
       `Nome: ${data.get("nome")}`,
       `Empresa: ${data.get("empresa")}`,
       `Contato: ${data.get("contato")}`,
-      `Tipo de negocio: ${data.get("tipo")}`,
+      `Tipo de negócio: ${data.get("tipo")}`,
       `Objetivo: ${data.get("objetivo")}`,
-      `Cidade/regiao: ${data.get("cidade") || "Nao informado"}`,
-      `Caixas/unidades: ${data.get("caixas") || "Nao informado"}`
+      `Cidade/região: ${data.get("cidade") || "Não informado"}`,
+      `Caixas/unidades: ${data.get("caixas") || "Não informado"}`
     ].join("\n"));
 
     const objective = String(data.get("objetivo") ?? "");
-    const eventName = objective === "Agendar demonstracao" ? "agendar_demo" : objective === "Solicitar piloto assistido" ? "piloto_assistido" : "pedir_proposta";
+    const eventName = objective === "Agendar demonstração" ? "agendar_demo" : objective === "Solicitar piloto assistido" ? "piloto_assistido" : "pedir_proposta";
     trackConversionEvent(eventName, attribution);
     trackConversionEvent("lead_submit", attribution);
-    setStatus("Abrindo seu e-mail. Se ele nao abrir, envie para comercial@shamarpdv.com.br.");
+    setStatus("Abrindo seu e-mail. Se ele não abrir, envie para comercial@shamarpdv.com.br.");
     window.location.href = `mailto:comercial@shamarpdv.com.br?subject=${subject}&body=${body}`;
   }
 
@@ -63,13 +63,13 @@ export function LeadForm({ source = "site" }: { source?: string }) {
       <label htmlFor="nome">Nome<input required id="nome" name="nome" className="input" autoComplete="name" /></label>
       <label htmlFor="empresa">Empresa<input required id="empresa" name="empresa" className="input" autoComplete="organization" /></label>
       <label htmlFor="contato">Contato<input required id="contato" name="contato" className="input" placeholder="Telefone ou e-mail" autoComplete="email" /></label>
-      <label htmlFor="tipo">Tipo de negocio<select required id="tipo" name="tipo" className="select" defaultValue=""><option value="" disabled>Selecione</option>{businessTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
+      <label htmlFor="tipo">Tipo de negócio<select required id="tipo" name="tipo" className="select" defaultValue=""><option value="" disabled>Selecione</option>{businessTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
       <label htmlFor="objetivo">Objetivo<select required id="objetivo" name="objetivo" className="select" defaultValue=""><option value="" disabled>Selecione</option>{objectiveTypes.map((type) => <option key={type}>{type}</option>)}</select></label>
-      <label htmlFor="cidade">Cidade/regiao<input id="cidade" name="cidade" className="input" autoComplete="address-level2" /></label>
+      <label htmlFor="cidade">Cidade/região<input id="cidade" name="cidade" className="input" autoComplete="address-level2" /></label>
       <label htmlFor="caixas">Quantidade de caixas/unidades<input id="caixas" name="caixas" className="input" inputMode="numeric" /></label>
       <p className="formNotice">Usaremos estes dados apenas para responder ao seu interesse comercial. Veja a <a href="/privacidade">privacidade</a>.</p>
       <button className="button primary" type="submit">Falar com vendas</button>
-      <p className="formNotice">Depois do envio, retornamos com perguntas objetivas sobre loja, caixas, migracao e perifericos.</p>
+      <p className="formNotice">Depois do envio, retornamos com perguntas objetivas sobre loja, caixas, migração e periféricos.</p>
       <p className="formStatus" role="status" aria-live="polite">{status}</p>
     </form>
   );
