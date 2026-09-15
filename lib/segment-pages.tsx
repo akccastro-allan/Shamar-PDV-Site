@@ -74,7 +74,7 @@ export const segmentPages: Record<Segment["slug"], Segment> = {
       { title: "Cliente, vendedor e histórico", text: "A venda pode preservar cliente e vendedor quando informados, mantendo o caixa separado do vendedor." },
       { title: "Estoque e compras", text: "Entrada de compra, estoque e revisão de preço por custo ajudam a manter a operação comercial atualizada." }
     ],
-    links: [{ href: "/produto", label: "Ver Produto Master" }, { href: "/migracao?origem=autopecas", label: "Migrar produtos" }, { href: "/compatibilidade?origem=autopecas", label: "Validar periféricos" }, { href: "/demonstracao?origem=autopecas", label: "Agendar demonstração" }],
+    links: [{ href: "/produto", label: "Ver Product Master" }, { href: "/blog/cadastro-autopecas-codigos-referencias", label: "Organizar cadastro de autopeças" }, { href: "/migracao?origem=autopecas", label: "Migrar produtos" }, { href: "/compatibilidade?origem=autopecas", label: "Validar periféricos" }, { href: "/demonstracao?origem=autopecas", label: "Agendar demonstração" }],
     faqs: [
       { question: "Consigo buscar por referência, marca ou aplicação?", answer: "Sim, quando esses campos estão cadastrados ou migrados de forma segura, eles ajudam a localizar a peça sem criar outro produto." },
       { question: "NCM, CEST e origem significam emissão fiscal completa?", answer: "Não. Eles são dados de classificação do produto. A autoridade fiscal completa permanece separada no ERP/provedor fiscal." },

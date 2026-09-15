@@ -6,7 +6,7 @@ export function pageMetadata(title: string, description: string, path: string): 
   return {
     title,
     description,
-    alternates: { canonical: path },
+    alternates: { canonical: url },
     openGraph: { title, description, url, siteName: "Shamar PDV", locale: "pt_BR", type: "website" }
   };
 }

@@ -6,6 +6,7 @@ export type CapabilityGroup = {
 
 export const navItems = [
   ["Produto", "/produto"],
+  ["PDV offline", "/pdv-offline"],
   ["Recursos", "/recursos"],
   ["Segmentos", "/segmentos"],
   ["Preços", "/precos"],
@@ -44,4 +45,27 @@ export const compatibility: ReadonlyArray<{ name: string; state: "Homologado" | 
   { name: "PinPad/TEF", state: "Em validação", detail: "Diagnóstico e fronteira prontos; homologação depende de SDK/provedor e validação factual." }
 ] as const;
 
-export const routes = ["/", "/produto", "/recursos", "/segmentos", "/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/precos", "/migracao", "/compatibilidade", "/demonstracao", "/ajuda", "/blog", "/contato", "/login", "/privacidade"];
+export const indexableRoutes = [
+  "/",
+  "/produto",
+  "/pdv-offline",
+  "/recursos",
+  "/segmentos",
+  "/segmentos/mercado",
+  "/segmentos/hortifruti",
+  "/segmentos/autopecas",
+  "/segmentos/material-de-construcao",
+  "/segmentos/varejo",
+  "/segmentos/atacarejo",
+  "/precos",
+  "/migracao",
+  "/compatibilidade",
+  "/demonstracao",
+  "/ajuda",
+  "/blog",
+  "/contato",
+  "/privacidade"
+] as const;
+
+export const utilityRoutes = ["/login"] as const;
+export const routes = [...indexableRoutes, ...utilityRoutes] as const;

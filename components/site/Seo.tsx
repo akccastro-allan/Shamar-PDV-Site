@@ -100,3 +100,18 @@ export function softwareJsonLd() {
     description: "Sistema PDV para venda, caixa, produtos, estoque, clientes, compras, preços, backup e operação local resiliente."
   };
 }
+
+export function articleJsonLd(article: { title: string; description: string; published: string; modified?: string; slug: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.description,
+    inLanguage: "pt-BR",
+    datePublished: article.published,
+    dateModified: article.modified ?? article.published,
+    author: { "@type": "Organization", name: "Equipe Shamar PDV" },
+    publisher: { "@type": "Organization", name: "Shamar PDV" },
+    mainEntityOfPage: absoluteUrl(`/blog/${article.slug}`)
+  };
+}
