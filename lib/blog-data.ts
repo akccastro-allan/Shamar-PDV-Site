@@ -180,6 +180,30 @@ export const blogArticles: BlogArticle[] = [
       { question: "Sangria e suprimento entram no fechamento?", answer: "Sim. Eles ajudam a explicar por que o dinheiro físico da gaveta pode ser diferente do total de vendas em dinheiro." }
     ],
     related: [{ href: "/produto", label: "Produto" }, { href: "/pdv-offline", label: "PDV offline" }, { href: "/blog/como-funciona-pdv-offline", label: "Operação offline" }]
+  },
+  {
+    slug: "codigo-de-barras-pdv",
+    title: "Código de barras no PDV: como reduzir erro no caixa",
+    description: "Entenda como código interno, EAN/GTIN, múltiplos códigos, embalagem, balança e busca por produto ajudam uma venda mais rápida no PDV.",
+    published: "2026-09-30",
+    category: "Estoque e produtos",
+    intent: "codigo de barras PDV",
+    summary: "Um guia para usar código de barras como ferramenta de operação, sem prometer que todo produto ou embalagem será resolvido por leitura automática sem cadastro correto.",
+    commercialHref: "/produto",
+    commercialLabel: "Ver cadastro e venda do Shamar PDV",
+    sections: [
+      { title: "Leitura rápida depende de cadastro bom", paragraphs: ["O leitor acelera a venda quando o produto tem código confiável, preço definido e unidade correta. Sem cadastro, o scanner só entrega uma sequência de caracteres; o PDV ainda precisa saber o que ela significa."] },
+      { title: "Tipos de código que aparecem na loja", bullets: ["Código interno criado pela própria loja.", "EAN/GTIN quando o produto vem com código comercial.", "Código de embalagem, caixa, pacote ou fardo.", "Etiqueta de balança quando o segmento usa peso.", "Referência ou SKU auxiliar para busca."] },
+      { title: "Preserve zeros à esquerda", paragraphs: ["Código de barras não deve ser tratado como número comum. Zeros à esquerda podem fazer parte da identidade do item; removê-los causa produto não encontrado ou colisão com outro cadastro."] },
+      { title: "Múltiplos códigos precisam apontar para a regra certa", bullets: ["A unidade vendida precisa ser clara.", "Embalagem não deve virar produto duplicado por acidente.", "Preço da apresentação deve ser explícito quando a loja vende caixa ou pacote.", "Produto pesado precisa respeitar o perfil de etiqueta configurado."] },
+      { title: "Busca textual continua importante", paragraphs: ["Nem todo item terá código legível. A operação precisa permitir busca por nome, código interno ou referência, principalmente em balcão, hortifruti, material de construção e autopeças."] }
+    ],
+    faqs: [
+      { question: "Todo produto precisa ter EAN/GTIN?", answer: "Não. Muitos itens usam código interno ou referência. O importante é que o cadastro seja consistente para venda e estoque." },
+      { question: "Posso cadastrar mais de um código para o mesmo produto?", answer: "Sim, quando a operação precisa localizar unidade, embalagem ou referência sem duplicar o produto indevidamente." },
+      { question: "Código de balança é igual a código comum?", answer: "Não necessariamente. Etiqueta de balança pode carregar produto e peso conforme o perfil configurado." }
+    ],
+    related: [{ href: "/produto", label: "Produto" }, { href: "/segmentos/material-de-construcao", label: "Material de construção" }, { href: "/segmentos/hortifruti", label: "Hortifruti" }]
   }
 ];
 
