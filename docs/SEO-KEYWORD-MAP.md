@@ -19,6 +19,7 @@ Mapa conciso para evitar canibalizacao entre paginas comerciais e conteudo de ap
 | `/blog/cadastro-autopecas-codigos-referencias` | organizar cadastro | como organizar cadastro de autopecas | codigo interno; EAN/GTIN; equivalencia | `/segmentos/autopecas`, `/migracao`, `/produto` | SUPPORT_CONTENT |
 | `/blog/backup-pdv-restauracao` | proteger dados | backup sistema PDV | restauracao PDV; backup confiavel | `/produto`, `/pdv-offline`, `/migracao` | SUPPORT_CONTENT |
 | `/blog/pdv-single-ou-rede` | escolher topologia | PDV um caixa ou varios caixas | PDV Single vs Network | `/precos`, `/produto`, `/contato` | SUPPORT_CONTENT |
+| `/blog/pdv-local-vs-online` | comparar local e online | PDV local vs online | PDV online; PDV offline; sistema de caixa online | `/pdv-online`, `/pdv-offline`, `/precos` | SUPPORT_CONTENT |
 
 Search Console: `SEARCH_CONSOLE_VERIFICATION = EXTERNAL_CONNECTION_REQUIRED`.
 

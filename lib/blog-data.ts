@@ -132,6 +132,30 @@ export const blogArticles: BlogArticle[] = [
       { question: "Network dispensa implantação assistida?", answer: "Não. Rede local, banco e múltiplos terminais precisam de validação no ambiente real." }
     ],
     related: [{ href: "/precos", label: "Planos e preços" }, { href: "/produto", label: "Produto" }, { href: "/contato", label: "Falar com vendas" }]
+  },
+  {
+    slug: "pdv-local-vs-online",
+    title: "PDV local vs online: como escolher sem cair em promessa fácil",
+    description: "Compare PDV local/offline e PDV online em nuvem com critérios práticos para venda, caixa, internet, loja, acesso e continuidade operacional.",
+    published: "2026-09-30",
+    category: "Escolha do PDV",
+    intent: "PDV local vs online",
+    summary: "Um guia comercial honesto para entender quando operação local importa, quando o online ajuda e por que os dois caminhos podem conviver.",
+    commercialHref: "/pdv-online",
+    commercialLabel: "Ver PDV online",
+    sections: [
+      { title: "A pergunta não é só internet ou nuvem", paragraphs: ["A decisão entre PDV local e PDV online deve começar pela rotina da loja: fila no caixa, estabilidade da internet, quantidade de operadores, necessidade de vários pontos, backup, acesso remoto e integrações externas."] },
+      { title: "Quando o PDV local pesa mais", bullets: ["A loja precisa continuar vendendo quando a conexão falha.", "O caixa depende de resposta rápida no balcão.", "O catálogo principal fica disponível na própria operação.", "Backup e restauração precisam ser controlados com clareza."] },
+      { title: "Quando o PDV online ajuda", bullets: ["A empresa precisa acessar lojas por endereço web.", "O usuário deve entrar com uma conta centralizada.", "A operação exige acesso por loja, empresa ou filial.", "Relatórios e gestão conectada fazem parte do plano de crescimento."] },
+      { title: "O melhor desenho pode combinar os dois", paragraphs: ["O Shamar PDV preserva a importância do local/offline e prepara aquisição para o online. O ponto é não vender nuvem como solução mágica nem tratar operação local como coisa antiga: cada fluxo precisa de prova operacional."] },
+      { title: "O que perguntar antes de escolher", bullets: ["Quantos caixas vendem ao mesmo tempo?", "A internet da loja é confiável no horário de pico?", "A loja precisa vender se a conexão cair?", "Quem pode acessar cada loja?", "O que será migrado do sistema atual?"] }
+    ],
+    faqs: [
+      { question: "PDV online funciona sem internet?", answer: "Não como promessa geral. Fluxos online dependem de conexão. Para independência de internet, avalie a proposta local/offline suportada." },
+      { question: "PDV local impede gestão em nuvem?", answer: "Não necessariamente. O desenho pode preservar venda local e usar capacidades conectadas quando elas estiverem validadas e disponíveis." },
+      { question: "Qual é melhor para loja pequena?", answer: "Depende da rotina. Uma loja com um caixa e internet instável pode priorizar local; uma operação com necessidade de acesso por loja pode avaliar online com cuidado." }
+    ],
+    related: [{ href: "/pdv-online", label: "PDV online" }, { href: "/pdv-offline", label: "PDV offline" }, { href: "/precos", label: "Caminhos comerciais" }]
   }
 ];
 
