@@ -102,7 +102,7 @@ const loginSource = fs.readFileSync(path.join(process.cwd(), "app/login/page.tsx
 if (!loginSource.includes("index: false")) throw new Error("/login must be noindex");
 if (!loginSource.includes("follow: false")) throw new Error("/login must be excluded from acquisition crawling");
 const blogSource = fs.readFileSync(path.join(process.cwd(), "lib/blog-data.ts"), "utf8");
-for (const slug of ["como-funciona-pdv-offline", "migracao-sistema-pdv-checklist", "cadastro-autopecas-codigos-referencias", "backup-pdv-restauracao", "pdv-single-ou-rede", "pdv-local-vs-online"]) {
+for (const slug of ["como-funciona-pdv-offline", "migracao-sistema-pdv-checklist", "cadastro-autopecas-codigos-referencias", "backup-pdv-restauracao", "pdv-single-ou-rede", "pdv-local-vs-online", "fechamento-de-caixa-pdv"]) {
   if (!blogSource.includes(`slug: "${slug}"`)) throw new Error(`Missing blog article slug: ${slug}`);
 }
 if (!fs.existsSync(path.join(process.cwd(), "docs/SEO-KEYWORD-MAP.md"))) throw new Error("Missing SEO keyword map");

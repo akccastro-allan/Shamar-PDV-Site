@@ -156,6 +156,30 @@ export const blogArticles: BlogArticle[] = [
       { question: "Qual é melhor para loja pequena?", answer: "Depende da rotina. Uma loja com um caixa e internet instável pode priorizar local; uma operação com necessidade de acesso por loja pode avaliar online com cuidado." }
     ],
     related: [{ href: "/pdv-online", label: "PDV online" }, { href: "/pdv-offline", label: "PDV offline" }, { href: "/precos", label: "Caminhos comerciais" }]
+  },
+  {
+    slug: "fechamento-de-caixa-pdv",
+    title: "Fechamento de caixa no PDV: o que conferir no fim do dia",
+    description: "Veja uma rotina simples para conferir vendas, dinheiro, Pix, cartão, sangria, suprimento, troco e divergências no fechamento de caixa.",
+    published: "2026-09-30",
+    category: "Operação",
+    intent: "fechamento de caixa PDV",
+    summary: "Um guia prático para fechar o caixa com menos improviso, separando conferência operacional de promessa fiscal ou financeira que depende de integração.",
+    commercialHref: "/produto",
+    commercialLabel: "Ver venda e caixa do Shamar PDV",
+    sections: [
+      { title: "Fechar caixa é conferir a operação", paragraphs: ["O fechamento de caixa ajuda a loja a comparar o que foi vendido, o que foi recebido e o que ficou fisicamente na gaveta. A rotina precisa ser simples para o operador e clara para o gestor."] },
+      { title: "Comece pelo caixa certo", bullets: ["Identifique operador e caixa usados no turno.", "Confira se houve abertura com troco inicial.", "Separe vendas concluídas de operações canceladas.", "Não misture conferência de gaveta com promessa de conciliação externa automática."] },
+      { title: "Separe os meios de pagamento", bullets: ["Dinheiro físico precisa considerar troco, suprimento e sangria.", "Pix manual deve aparecer separado do dinheiro.", "Cartão manual precisa ser conferido com comprovantes ou relatório do provedor.", "Voucher ou outros meios devem seguir a configuração operacional da loja."] },
+      { title: "Olhe divergência como evidência", paragraphs: ["Diferença no fechamento não deve virar ajuste silencioso. O caminho seguro é registrar o valor informado, mostrar a divergência e permitir revisão com histórico."] },
+      { title: "O que preparar antes de implantar", bullets: ["Definir quem abre e fecha caixa.", "Combinar rotina de sangria e suprimento.", "Validar impressão ou saída do resumo quando aplicável.", "Treinar operador para não fechar venda não confirmada como concluída."] }
+    ],
+    faqs: [
+      { question: "Fechamento de caixa substitui conciliação bancária?", answer: "Não. Fechamento operacional confere a rotina do caixa. Conciliação bancária ou de adquirente depende de integrações e regras específicas." },
+      { question: "Posso fechar caixa com divergência?", answer: "A loja pode precisar registrar a divergência, mas ela deve ficar visível para revisão em vez de ser apagada por ajuste automático." },
+      { question: "Sangria e suprimento entram no fechamento?", answer: "Sim. Eles ajudam a explicar por que o dinheiro físico da gaveta pode ser diferente do total de vendas em dinheiro." }
+    ],
+    related: [{ href: "/produto", label: "Produto" }, { href: "/pdv-offline", label: "PDV offline" }, { href: "/blog/como-funciona-pdv-offline", label: "Operação offline" }]
   }
 ];
 
