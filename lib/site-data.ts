@@ -7,6 +7,7 @@ export type CapabilityGroup = {
 export const navItems = [
   ["Produto", "/produto"],
   ["PDV offline", "/pdv-offline"],
+  ["PDV online", "/pdv-online"],
   ["Recursos", "/recursos"],
   ["Segmentos", "/segmentos"],
   ["Preços", "/precos"],
@@ -49,6 +50,7 @@ export const indexableRoutes = [
   "/",
   "/produto",
   "/pdv-offline",
+  "/pdv-online",
   "/recursos",
   "/segmentos",
   "/segmentos/mercado",

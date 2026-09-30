@@ -7,6 +7,7 @@ Mapa conciso para evitar canibalizacao entre paginas comerciais e conteudo de ap
 | `/` | conhecer sistema PDV | sistema PDV; PDV para loja | caixa para loja; controle de estoque; PDV simples | `/produto`, `/pdv-offline`, `/segmentos/autopecas`, `/migracao`, `/blog` | MONEY_PAGE |
 | `/produto` | entender produto PDV | sistema PDV para loja | sistema de caixa para loja; produto estoque caixa | `/precos`, `/recursos`, `/segmentos/autopecas` | MONEY_PAGE |
 | `/pdv-offline` | comprar PDV offline | PDV offline | sistema PDV sem internet; sistema de caixa offline | `/produto`, `/compatibilidade`, `/migracao`, `/blog/como-funciona-pdv-offline` | MONEY_PAGE |
+| `/pdv-online` | entender PDV online/cloud | PDV online; sistema PDV online | PDV em nuvem; sistema de caixa online | `/produto`, `/recursos`, `/pdv-offline`, `/contato` | MONEY_PAGE |
 | `/segmentos/autopecas` | comprar PDV para autopecas | sistema para autopecas; PDV para autopecas | sistema de estoque para autopecas; programa para autopecas | `/blog/cadastro-autopecas-codigos-referencias`, `/migracao`, `/produto` | MONEY_PAGE |
 | `/segmentos/mercado` | PDV para mercado | sistema PDV para mercado | caixa para mercado; mercearia | `/produto`, `/migracao`, `/precos` | MONEY_PAGE |
 | `/segmentos/hortifruti` | PDV para hortifruti | PDV para hortifruti | sistema para hortifruti; PDV com balanca | `/compatibilidade`, `/recursos`, `/contato` | MONEY_PAGE |

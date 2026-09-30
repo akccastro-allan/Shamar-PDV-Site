@@ -19,6 +19,7 @@ Deployment provider is pending business/infra decision. The repository is ready 
 
 - `/`
 - `/produto`
+- `/pdv-online`
 - `/recursos`
 - `/precos`
 - `/contato`

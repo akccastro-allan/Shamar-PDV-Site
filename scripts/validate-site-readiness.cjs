@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const routes = ["/", "/produto", "/pdv-offline", "/recursos", "/segmentos", "/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/precos", "/migracao", "/compatibilidade", "/demonstracao", "/ajuda", "/blog", "/contato", "/login", "/privacidade"];
+const routes = ["/", "/produto", "/pdv-offline", "/pdv-online", "/recursos", "/segmentos", "/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/precos", "/migracao", "/compatibilidade", "/demonstracao", "/ajuda", "/blog", "/contato", "/login", "/privacidade"];
 const missing = [];
 for (const route of routes) {
   const file = route === "/" ? "app/page.tsx" : `app${route}/page.tsx`;
@@ -60,6 +60,15 @@ const expected = [
   "Oficina, diagnóstico e serviço pertencem a outro domínio/produto",
   "operação local suportada",
   "piloto assistido"
+  ,"PDV online"
+  ,"sistema PDV online"
+  ,"PDV em nuvem"
+  ,"sistema de caixa online"
+  ,"plataforma SaaS compartilhada"
+  ,"Mesmo deploy para todos"
+  ,"Passport como autoridade"
+  ,"Hostname sozinho não concede permissão"
+  ,"sem IDs técnicos"
   ,"PDV offline para continuar vendendo mesmo quando a internet não ajuda"
   ,"sistema PDV sem internet"
   ,"sistema de caixa offline"
@@ -78,7 +87,7 @@ for (const term of expected) {
 for (const term of ["Serve para loja pequena?", "Vou perder meus dados", "E meus equipamentos?", "Consigo migrar?", "Falar sobre Single", "Falar sobre Network", "Agendar demonstração", "Se ele não abrir"]) {
   if (!allText.includes(term)) throw new Error(`Expected conversion hardening text missing: ${term}`);
 }
-for (const route of ["/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/migracao", "/compatibilidade", "/precos", "/produto", "/pdv-offline", "/recursos", "/blog"]) {
+for (const route of ["/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/autopecas", "/segmentos/material-de-construcao", "/segmentos/varejo", "/segmentos/atacarejo", "/migracao", "/compatibilidade", "/precos", "/produto", "/pdv-offline", "/pdv-online", "/recursos", "/blog"]) {
   const file = route === "/" ? "app/page.tsx" : `app${route}/page.tsx`;
   const text = fs.readFileSync(path.join(process.cwd(), file), "utf8");
   if (!/metadata|segmentMetadata/.test(text)) throw new Error(`Missing metadata export/reference: ${route}`);
