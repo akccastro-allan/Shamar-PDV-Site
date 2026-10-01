@@ -134,12 +134,12 @@ export const blogArticles: BlogArticle[] = [
     related: [{ href: "/precos", label: "Planos e preços" }, { href: "/produto", label: "Produto" }, { href: "/contato", label: "Falar com vendas" }]
   },
   {
-    slug: "pdv-local-vs-online",
-    title: "PDV local vs online: como escolher sem cair em promessa fácil",
-    description: "Compare PDV local/offline e PDV online em nuvem com critérios práticos para venda, caixa, internet, loja, acesso e continuidade operacional.",
+    slug: "pdv-online-vs-pdv-offline",
+    title: "PDV online vs PDV offline: como escolher sem cair em promessa fácil",
+    description: "Compare PDV online em nuvem e PDV offline/local com critérios práticos para venda, caixa, internet, loja, acesso e continuidade operacional.",
     published: "2026-09-30",
     category: "Escolha do PDV",
-    intent: "PDV local vs online",
+    intent: "PDV online vs PDV offline",
     summary: "Um guia comercial honesto para entender quando operação local importa, quando o online ajuda e por que os dois caminhos podem conviver.",
     commercialHref: "/pdv-online",
     commercialLabel: "Ver PDV online",
@@ -204,6 +204,98 @@ export const blogArticles: BlogArticle[] = [
       { question: "Código de balança é igual a código comum?", answer: "Não necessariamente. Etiqueta de balança pode carregar produto e peso conforme o perfil configurado." }
     ],
     related: [{ href: "/produto", label: "Produto" }, { href: "/segmentos/material-de-construcao", label: "Material de construção" }, { href: "/segmentos/hortifruti", label: "Hortifruti" }]
+  },
+  {
+    slug: "como-escolher-sistema-pdv",
+    title: "Como escolher um sistema PDV sem cair em promessa pronta",
+    description: "Veja critérios práticos para escolher sistema PDV: caixa, estoque, produtos, backup, migração, periféricos, suporte e operação offline.",
+    published: "2026-10-01",
+    category: "Escolha do PDV",
+    intent: "como escolher sistema PDV",
+    summary: "Um guia para comparar sistemas PDV pela rotina real da loja, separando capacidade provada de promessa comercial ampla demais.",
+    commercialHref: "/produto",
+    commercialLabel: "Conhecer o Shamar PDV",
+    sections: [
+      { title: "Comece pelo caixa", paragraphs: ["O melhor sistema PDV para uma loja é aquele que não atrapalha a venda. Antes de olhar relatórios avançados, confira se o operador consegue abrir caixa, buscar produto, vender, receber e concluir sem improviso."] },
+      { title: "Critérios que pesam na decisão", bullets: ["Venda rápida com código de barras e busca textual.", "Produtos, preços, estoque e clientes no mesmo fluxo operacional.", "Fechamento de caixa compreensível.", "Backup e restauração testáveis.", "Migração com revisão, não promessa de mágica.", "Compatibilidade de periféricos validada na implantação."] },
+      { title: "Cuidado com promessa sem prova", paragraphs: ["Afirmações como produção validada, impressão física homologada, TEF real ou fiscal completo exigem evidência específica. Quando algo depende de hardware, provedor ou certificado, o site deve dizer isso claramente."] },
+      { title: "Como usar uma demonstração", bullets: ["Leve exemplos de produtos reais.", "Pergunte como o PDV lida com internet instável.", "Peça para ver venda, pagamento e fechamento.", "Pergunte onde aparecem etiquetas, promoções e backup.", "Separe o que está pronto para demonstração do que depende de piloto assistido."] }
+    ],
+    faqs: [
+      { question: "Sistema PDV mais completo é sempre melhor?", answer: "Não. Completo demais pode atrapalhar o balcão se o fluxo principal de venda não for simples." },
+      { question: "Preciso escolher entre PDV online e offline?", answer: "A decisão depende da loja. Operação local ajuda na continuidade; online ajuda em acesso conectado. O importante é não confundir um com o outro." },
+      { question: "Preço baixo basta para decidir?", answer: "Não. Migração, suporte, backup, periféricos e rotina real podem custar mais caro quando são ignorados." }
+    ],
+    related: [{ href: "/produto", label: "Produto" }, { href: "/precos", label: "Planos e preços" }, { href: "/compatibilidade", label: "Compatibilidade" }]
+  },
+  {
+    slug: "controle-de-estoque-no-pdv",
+    title: "Controle de estoque no PDV: o que a loja precisa enxergar",
+    description: "Entenda como produto, compra, venda, estoque baixo, inventário e custo ajudam o controle de estoque dentro de um sistema PDV.",
+    published: "2026-10-01",
+    category: "Estoque e produtos",
+    intent: "controle de estoque no PDV",
+    summary: "Um guia operacional para estoque no PDV, sem transformar o caixa em ERP e sem esconder limites de integração.",
+    commercialHref: "/recursos",
+    commercialLabel: "Ver recursos do Shamar PDV",
+    sections: [
+      { title: "Estoque começa no cadastro", paragraphs: ["Produto com unidade errada, código duplicado ou embalagem confusa cria erro antes da venda. O PDV precisa deixar claro o que é unidade, caixa, pacote, peso ou apresentação comercial."] },
+      { title: "Movimentos que precisam ficar rastreáveis", bullets: ["Venda baixando estoque quando aplicável.", "Compra ou entrada aumentando saldo.", "Inventário corrigindo diferença com registro.", "Estoque baixo chamando atenção.", "Custo alimentando revisão de preço sem contaminar histórico de venda."] },
+      { title: "O que o operador precisa ver", paragraphs: ["No balcão, o operador precisa localizar produto e vender. Na gestão, a loja precisa identificar itens sem saldo, compras recentes, preços desatualizados e produtos que exigem revisão."] },
+      { title: "Integração não deve mascarar divergência", paragraphs: ["Quando existe ERP, fiscal ou importação, o PDV deve preservar autoridade e evidência. Se uma origem externa está indisponível ou ambígua, a informação deve ser revisada em vez de aplicada em silêncio."] }
+    ],
+    faqs: [
+      { question: "PDV substitui ERP de estoque?", answer: "Não necessariamente. O PDV controla a operação da loja; integrações e domínios externos precisam de contrato e autoridade própria." },
+      { question: "Inventário pode corrigir qualquer coisa?", answer: "Inventário corrige saldo operacional, mas deve deixar evidência para a loja entender a diferença." },
+      { question: "Custo muda venda antiga?", answer: "Não deve. Revisão de custo e margem orienta preço novo sem reescrever venda concluída." }
+    ],
+    related: [{ href: "/recursos", label: "Recursos" }, { href: "/produto", label: "Produto" }, { href: "/blog/codigo-de-barras-pdv", label: "Código de barras" }]
+  },
+  {
+    slug: "etiquetas-de-preco-no-pdv",
+    title: "Etiquetas de preço no PDV: produto, prateleira e mudança de preço",
+    description: "Veja como etiquetas de produto, etiquetas de prateleira, fila de alteração de preço e scan-to-label ajudam a manter a loja coerente.",
+    published: "2026-10-01",
+    category: "Estoque e produtos",
+    intent: "etiquetas de preço no PDV",
+    summary: "Um guia para usar etiquetas no PDV com cuidado, deixando claro o que já foi validado em software e o que depende da impressora física.",
+    commercialHref: "/recursos",
+    commercialLabel: "Ver etiquetas nos recursos",
+    sections: [
+      { title: "Etiqueta evita divergência visível", paragraphs: ["Preço de prateleira, etiqueta de produto e preço do caixa precisam contar a mesma história. Quando o preço muda, a loja precisa saber quais etiquetas ficaram pendentes."] },
+      { title: "Fluxos úteis", bullets: ["Etiqueta de produto para identificação.", "Etiqueta de prateleira para preço exposto.", "Fila após alteração de preço.", "Reimpressão ou descarte quando a etiqueta foi tratada.", "Scan-to-label para localizar item pelo código lido."] },
+      { title: "Preço sempre vem da autoridade do PDV", paragraphs: ["Etiqueta não deve inventar preço. Ela deve refletir o preço autoritativo do produto, tabela ou promoção já definido pela operação."] },
+      { title: "Impressora física é gate de campo", paragraphs: ["O software pode renderizar e enfileirar etiquetas em ambiente controlado. Impressora física, tamanho de mídia, driver e corte precisam de validação na implantação."] }
+    ],
+    faqs: [
+      { question: "Etiqueta de preço já significa impressora validada?", answer: "Não. A rotina de software pode estar pronta, mas impressão física depende do equipamento real." },
+      { question: "Mudança de preço cria etiqueta automaticamente?", answer: "O fluxo pode gerar pendência de etiqueta para revisão/impressão conforme regra operacional validada." },
+      { question: "Scan-to-label substitui cadastro?", answer: "Não. Ele ajuda a localizar o produto pela leitura, mas depende de código cadastrado corretamente." }
+    ],
+    related: [{ href: "/recursos", label: "Recursos" }, { href: "/produto", label: "Produto" }, { href: "/blog/codigo-de-barras-pdv", label: "Código de barras no PDV" }]
+  },
+  {
+    slug: "promocoes-no-pdv",
+    title: "Promoções no PDV e modo vitrine sem bagunçar o preço",
+    description: "Entenda como promoções, validade, preço autoritativo e modo vitrine podem divulgar ofertas sem alterar a regra de venda no caixa.",
+    published: "2026-10-01",
+    category: "Operação",
+    intent: "promoções no PDV",
+    summary: "Um guia para expor ofertas com segurança, separando comunicação visual de autoridade de preço e operação do caixa.",
+    commercialHref: "/recursos",
+    commercialLabel: "Ver promoções e modo vitrine",
+    sections: [
+      { title: "Promoção precisa de regra clara", paragraphs: ["Uma promoção útil informa produto, período, preço ou condição e status. Ativar, agendar ou encerrar deve respeitar a regra comercial, sem mudar venda antiga."] },
+      { title: "Modo vitrine é comunicação, não motor de preço", paragraphs: ["O display ocioso pode mostrar oferta e reforçar campanha, mas o preço precisa vir da autoridade do PDV. A tela bonita não deve decidir preço sozinha."] },
+      { title: "Primeiro bip precisa acordar e vender", bullets: ["O operador não deve escanear duas vezes.", "O código lido durante ocioso precisa ser preservado.", "O display fecha e o produto segue para busca/venda.", "Carrinho com item ou pagamento aberto não deve ativar descanso comercial."] },
+      { title: "Validação honesta", paragraphs: ["Promoções e modo vitrine já têm lógica validada em ambiente controlado/headless. A prova visual de campo depende de tela real, resolução e rotina de loja."] }
+    ],
+    faqs: [
+      { question: "Modo vitrine muda preço?", answer: "Não deve. Ele divulga ofertas; a autoridade de preço continua no PDV." },
+      { question: "Promoção vencida aparece no caixa?", answer: "A regra esperada é respeitar validade e status para não vender oferta fora do período." },
+      { question: "A tela ociosa aparece durante pagamento?", answer: "Não deveria. Pagamento, consulta, opções e carrinho com item são estados operacionais que bloqueiam o descanso comercial." }
+    ],
+    related: [{ href: "/recursos", label: "Recursos" }, { href: "/produto", label: "Produto" }, { href: "/precos", label: "Planos e preços" }]
   }
 ];
 

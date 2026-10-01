@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
-import { JsonLd, organizationJsonLd, softwareJsonLd, websiteJsonLd } from "@/components/site/Seo";
+import { JsonLd, organizationJsonLd, productJsonLd, softwareJsonLd, websiteJsonLd } from "@/components/site/Seo";
 import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website"
   },
+  twitter: {
+    card: "summary",
+    title: "Shamar PDV",
+    description: "Sistema PDV simples, completo e leve para vender todos os dias."
+  },
   robots: { index: true, follow: true }
 };
 
@@ -31,6 +36,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <JsonLd id="schema-organization" data={organizationJsonLd()} />
         <JsonLd id="schema-website" data={websiteJsonLd()} />
         <JsonLd id="schema-software" data={softwareJsonLd()} />
+        <JsonLd id="schema-product" data={productJsonLd()} />
         <SiteHeader />
         {children}
         <SiteFooter />

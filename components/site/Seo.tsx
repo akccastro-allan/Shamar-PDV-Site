@@ -101,6 +101,18 @@ export function softwareJsonLd() {
   };
 }
 
+export function productJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Shamar PDV",
+    brand: { "@type": "Brand", name: "Shamar PDV" },
+    category: "Sistema PDV",
+    description: "Sistema PDV para loja com venda, caixa, produtos, estoque, clientes, etiquetas, migração assistida e operação local/offline-first em escopo suportado.",
+    url: absoluteUrl("/produto")
+  };
+}
+
 export function articleJsonLd(article: { title: string; description: string; published: string; modified?: string; slug: string }) {
   return {
     "@context": "https://schema.org",

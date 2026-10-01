@@ -19,7 +19,11 @@ Mapa conciso para evitar canibalizacao entre paginas comerciais e conteudo de ap
 | `/blog/cadastro-autopecas-codigos-referencias` | organizar cadastro | como organizar cadastro de autopecas | codigo interno; EAN/GTIN; equivalencia | `/segmentos/autopecas`, `/migracao`, `/produto` | SUPPORT_CONTENT |
 | `/blog/backup-pdv-restauracao` | proteger dados | backup sistema PDV | restauracao PDV; backup confiavel | `/produto`, `/pdv-offline`, `/migracao` | SUPPORT_CONTENT |
 | `/blog/pdv-single-ou-rede` | escolher topologia | PDV um caixa ou varios caixas | PDV Single vs Network | `/precos`, `/produto`, `/contato` | SUPPORT_CONTENT |
-| `/blog/pdv-local-vs-online` | comparar local e online | PDV local vs online | PDV online; PDV offline; sistema de caixa online | `/pdv-online`, `/pdv-offline`, `/precos` | SUPPORT_CONTENT |
+| `/blog/pdv-online-vs-pdv-offline` | comparar online e offline | PDV online vs PDV offline | PDV em nuvem; sistema PDV sem internet; sistema de caixa online | `/pdv-online`, `/pdv-offline`, `/precos` | SUPPORT_CONTENT |
+| `/blog/como-escolher-sistema-pdv` | escolher PDV | como escolher sistema PDV | sistema PDV; PDV para comercio; sistema de caixa | `/produto`, `/precos`, `/compatibilidade` | SUPPORT_CONTENT |
+| `/blog/controle-de-estoque-no-pdv` | controlar estoque no PDV | controle de estoque no PDV | estoque baixo; compra; inventario; custo | `/recursos`, `/produto`, `/blog/codigo-de-barras-pdv` | SUPPORT_CONTENT |
+| `/blog/etiquetas-de-preco-no-pdv` | imprimir etiqueta de preco | etiquetas de preco no PDV | etiqueta de prateleira; fila de etiqueta; scan-to-label | `/recursos`, `/produto`, `/blog/codigo-de-barras-pdv` | SUPPORT_CONTENT |
+| `/blog/promocoes-no-pdv` | operar promocoes no PDV | promocoes no PDV; modo vitrine | oferta no caixa; display ocioso; preco promocional | `/recursos`, `/produto`, `/precos` | SUPPORT_CONTENT |
 
 Search Console: `SEARCH_CONSOLE_VERIFICATION = EXTERNAL_CONNECTION_REQUIRED`.
 
