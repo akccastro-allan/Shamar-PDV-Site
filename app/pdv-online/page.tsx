@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CTA } from "@/components/site/CTA";
 import { PageHero } from "@/components/site/PageHero";
+import { ProofStatus } from "@/components/site/ProofStatus";
 import { Breadcrumbs, FaqSection, JsonLd, breadcrumbJsonLd, faqJsonLd } from "@/components/site/Seo";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -77,7 +78,7 @@ export default function PdvOnlinePage() {
         </div>
       </section>
       <FaqSection items={faqs} />
-      <CTA label="Falar sobre PDV online" source="pdv-online" />
+      <ProofStatus compact /><CTA label="Falar sobre PDV online" source="pdv-online" />
     </main>
   );
 }

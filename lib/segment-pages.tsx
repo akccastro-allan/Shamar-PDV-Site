@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CTA } from "@/components/site/CTA";
 import { PageHero } from "@/components/site/PageHero";
+import { ProofStatus } from "@/components/site/ProofStatus";
 import { Breadcrumbs, FaqSection, JsonLd, breadcrumbJsonLd, faqJsonLd } from "@/components/site/Seo";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -160,6 +161,7 @@ export function SegmentSeoPage({ segment }: { segment: Segment }) {
       </section>
       <section className="section"><p className="eyebrow">Continue explorando</p><div className="routeLinks">{segment.links.map((link) => <Link className="button secondary" href={link.href} key={link.href}>{link.label}</Link>)}</div></section>
       <FaqSection items={segment.faqs} />
+      <ProofStatus compact />
       <CTA label="Quero conhecer o Shamar PDV" source={segment.slug} />
     </main>
   );

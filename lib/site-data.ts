@@ -4,6 +4,28 @@ export type CapabilityGroup = {
   items: string[];
 };
 
+export const provenOperationalClaims = [
+  "PDV Online passou runtime real de navegador em ambiente controlado.",
+  "Caixa online cobre login, loja, abertura de caixa, busca, venda, checkout, pagamento e conclusão em prova controlada.",
+  "Etiquetas de produto e prateleira estão operacionais em modo headless.",
+  "Fila de etiquetas após alteração de preço está operacional.",
+  "Scan-to-label está operacional.",
+  "Promoções e Modo Vitrine passaram lógica headless.",
+  "Primeiro bip no display ocioso preserva e processa o produto em prova headless.",
+  "Baseline k6 real existe para 10 e 50 VU.",
+  "Diagnóstico de suporte gera resumo sanitizado."
+] as const;
+
+export const externalFieldGates = [
+  "Impressora física de cupom",
+  "Impressora física de etiquetas",
+  "Balança física",
+  "Adquirente ou TEF real",
+  "Provider fiscal e certificado de produção",
+  "Credenciais Passport de produção",
+  "Instalação em ambiente real do cliente"
+] as const;
+
 export const navItems = [
   ["Produto", "/produto"],
   ["PDV offline", "/pdv-offline"],
@@ -27,6 +49,8 @@ export const segments = [
 
 export const capabilityGroups: CapabilityGroup[] = [
   { title: "Venda e caixa", text: "Fluxo de venda direto para o operador.", items: ["Leitura por código de barras", "F9 consulta produto/preço", "PageUp para pagamento e F12 para mais opções", "Dinheiro, Pix manual e cartão manual quando configurados", "Histórico e reimpressão"] },
+  { title: "PDV Online", text: "Frente web/cloud provada em runtime real controlado.", items: ["Login e seleção de loja", "Abertura de caixa", "Busca de produto", "Venda, checkout, pagamento e conclusão", "Recuperação sem duplicar venda, pagamento, estoque ou impressão"] },
+  { title: "Etiquetas e promoções", text: "Rotinas comerciais operacionais para exposição da loja.", items: ["Etiqueta de produto e prateleira", "Fila após alteração de preço", "Scan-to-label", "Promoções com autoridade de preço do PDV", "Modo Vitrine e primeiro bip preservado em prova headless"] },
   { title: "Produtos e estoque", text: "Cadastro comercial e movimentação controlada.", items: ["Produtos UN e KG", "Embalagens e códigos múltiplos", "Product Master com marca, fabricante, NCM, CEST, origem, aplicação e equivalências quando disponíveis", "Estoque baixo e inventário", "Compras e entrada por XML NF-e"] },
   { title: "Clientes", text: "Identificação sem travar a venda.", items: ["Cliente opcional", "Crediário quando habilitado", "Histórico operacional", "Tabelas de preço por perfil"] },
   { title: "Compras", text: "Entrada simples para manter o estoque correto.", items: ["Fornecedores", "Compras", "Importação XML NF-e", "Custo operacional para revisão de preço"] },
