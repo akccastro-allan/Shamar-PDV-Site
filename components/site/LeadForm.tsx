@@ -54,8 +54,8 @@ export function LeadForm({ source = "site" }: { source?: string }) {
     const eventName = objective === "Agendar demonstração" ? "agendar_demo" : objective === "Solicitar piloto assistido" ? "piloto_assistido" : "pedir_proposta";
     trackConversionEvent(eventName, attribution);
     trackConversionEvent("lead_submit", attribution);
-    setStatus("Abrindo seu e-mail. Se ele não abrir, envie para comercial@shamarpdv.com.br.");
-    window.location.href = `mailto:comercial@shamarpdv.com.br?subject=${subject}&body=${body}`;
+    setStatus("Abrindo seu e-mail. Se ele não abrir, envie para allan@mkshalom.com.br.");
+    window.location.href = `mailto:allan@mkshalom.com.br?subject=${subject}&body=${body}`;
   }
 
   return (

@@ -26,7 +26,7 @@ const found = forbidden.filter((term) => allText.includes(term));
 if (found.length) throw new Error(`Forbidden public residue/claim: ${found.join(", ")}`);
 
 const expected = [
-  "comercial@shamarpdv.com.br",
+  "allan@mkshalom.com.br",
   "mailto:",
   "Software Ready",
   "Em validação",
@@ -92,7 +92,7 @@ for (const route of ["/segmentos/mercado", "/segmentos/hortifruti", "/segmentos/
   const text = fs.readFileSync(path.join(process.cwd(), file), "utf8");
   if (!/metadata|segmentMetadata/.test(text)) throw new Error(`Missing metadata export/reference: ${route}`);
 }
-for (const cta of ["contato?origem=", "demonstracao?origem=", "mailto:comercial@shamarpdv.com.br"]) {
+for (const cta of ["contato?origem=", "demonstracao?origem=", "mailto:allan@mkshalom.com.br"]) {
   if (!allText.includes(cta)) throw new Error(`Expected CTA path missing: ${cta}`);
 }
 const sitemapSource = fs.readFileSync(path.join(process.cwd(), "app/sitemap.ts"), "utf8");

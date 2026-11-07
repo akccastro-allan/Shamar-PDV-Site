@@ -76,7 +76,7 @@ export function organizationJsonLd() {
     "@type": "Organization",
     name: "Shamar PDV",
     url: absoluteUrl("/"),
-    contactPoint: [{ "@type": "ContactPoint", contactType: "sales", email: "comercial@shamarpdv.com.br", availableLanguage: "Portuguese" }]
+    contactPoint: [{ "@type": "ContactPoint", contactType: "sales", email: "allan@mkshalom.com.br", availableLanguage: "Portuguese" }]
   };
 }
 
