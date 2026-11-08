@@ -15,16 +15,14 @@ async function unusedPort() {
   await new Promise(resolve => probe.close(resolve));
   return port;
 }
-test('npm start contract serves the real static export and never the source tree', { timeout: 25000 }, async t => {
+test('static recovery preview never becomes the production Railpack start command', { timeout: 25000 }, async t => {
   assert.ok(fs.existsSync(path.join(root, 'out/index.html')), 'Run npm run build before this artifact test');
-  const start = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).scripts.start;
+  const scripts = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8')).scripts;
+  assert.equal(scripts.start, undefined, 'A start script makes Railpack skip the static Caddy/NGINX path');
+  assert.equal(scripts['preview:static'], 'node scripts/start-static.mjs');
   const port = await unusedPort();
-  // Invoke the literal npm entrypoint without a shell so teardown owns one PID.
-  const args = start === 'next start'
-    ? [require.resolve('next/dist/bin/next'), 'start', '--hostname', '127.0.0.1', '--port', String(port)]
-    : start === 'node scripts/start-static.mjs'
-      ? [path.join(root, 'scripts/start-static.mjs')]
-      : assert.fail('Unreviewed start command: ' + start);
+  // Invoke the literal recovery preview without a shell so teardown owns one PID.
+  const args = [path.join(root, 'scripts/start-static.mjs')];
   const child = spawn(process.execPath, args, { cwd: root, windowsHide: true,
     env: { ...process.env, PORT: String(port), HOST: '127.0.0.1', NO_UPDATE_CHECK: '1', NEXT_TELEMETRY_DISABLED: '1' },
     stdio: ['ignore', 'pipe', 'pipe'] });
@@ -42,7 +40,7 @@ test('npm start contract serves the real static export and never the source tree
       catch { /* Wait only for this newly started process to become ready. */ }
       await delay(100);
     }
-    assert.ok(home?.ok && !exited, 'Start must serve output:export; exit=' + exitCode + '\n' + output);
+    assert.ok(home?.ok && !exited, 'Static recovery preview must serve output:export; exit=' + exitCode + '\n' + output);
     const html = await home.text();
     assert.match(html, /Shamar PDV/);
     await t.test('nested exported route and contact remain available', async () => {

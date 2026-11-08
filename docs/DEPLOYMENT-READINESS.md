@@ -22,10 +22,10 @@ Run from this repository with the lock file installed:
 npm ci
 $env:NEXT_PUBLIC_SITE_URL = 'https://pdv.shamarsuite.com.br'
 npm run build
-npm start
+npm run preview:static
 ```
 
-`npm start` now serves the actual `out/` directory using the pinned `serve-handler` implementation. It defaults to `127.0.0.1:3000`, exposes only GET/HEAD, does not list directories, and does not turn missing URLs into a successful SPA response. Missing export or an invalid/busy port fails explicitly. It is a local/operator preview, not a new production service, login API or financial endpoint.
+`npm run preview:static` serves the actual `out/` directory using the pinned `serve-handler` implementation. The package deliberately has no `start` script because Railpack interprets one as an application runtime and would skip the static Caddy/NGINX path. It defaults to `127.0.0.1:3000`, exposes only GET/HEAD, does not list directories, and does not turn missing URLs into a successful SPA response. Missing export or an invalid/busy port fails explicitly. It is a local/operator preview, not a new production service, login API or financial endpoint.
 
 For another free local port, set `$env:PORT = '43001'` before starting. `HOST` accepts an explicit IP address; retain the loopback default unless a separate network exposure is authorized. Never serve the repository root. Stop only the process started for the preview.
 

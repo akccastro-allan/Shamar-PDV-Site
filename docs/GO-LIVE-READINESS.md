@@ -6,7 +6,7 @@ DOMAIN = ACTIVE: https://pdv.shamarsuite.com.br.
 
 The existing Coolify resource `qsdevw1spjk98ddri5bnnbjq` serves this repository as a static export from `/out` on port80 with a real health probe. The hostname and HTTPS were accepted on 2026-11-07; the temporary resource URL remains a diagnostic path, not a replacement canonical domain. The UI template is a separate preview.
 
-Use `docs/DEPLOYMENT-READINESS.md` for the current publication and recovery contract. `npm start` previews the built static artifact locally; it must not be configured as a Next SSR process. GitHub Pages is a legacy optional target, not an unresolved infrastructure decision or the active production authority.
+Use `docs/DEPLOYMENT-READINESS.md` for the current publication and recovery contract. `npm run preview:static` previews the built static artifact locally. The package intentionally has no `start` script so Railpack keeps the production static hosting path; it must not be configured as a Next SSR process. GitHub Pages is a legacy optional target, not an unresolved infrastructure decision or the active production authority.
 
 ## Analytics boundary
 

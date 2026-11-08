@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node scripts/start-static.mjs",
+    "preview:static": "node scripts/start-static.mjs",
     "typecheck": "next typegen && tsc --noEmit",
     "test": "node --test scripts/*.test.cjs",
     "validate:site": "node scripts/validate-site-readiness.cjs"
