@@ -2,17 +2,11 @@
 
 ## Custom domain
 
-DOMAIN = DECISION_PENDING.
+DOMAIN = ACTIVE: https://pdv.shamarsuite.com.br.
 
-To connect a final commercial domain, the project owner must provide:
+The existing Coolify resource `qsdevw1spjk98ddri5bnnbjq` serves this repository as a static export from `/out` on port80 with a real health probe. The hostname and HTTPS were accepted on 2026-11-07; the temporary resource URL remains a diagnostic path, not a replacement canonical domain. The UI template is a separate preview.
 
-- chosen hostname, for example a root domain or subdomain;
-- DNS authority for the zone;
-- GitHub Pages custom-domain configuration;
-- DNS records required by GitHub Pages for that hostname;
-- HTTPS verification after DNS propagation.
-
-The current provider URL remains acceptable for commercial smoke until a canonical production domain is chosen.
+Use `docs/DEPLOYMENT-READINESS.md` for the current publication and recovery contract. `npm start` previews the built static artifact locally; it must not be configured as a Next SSR process. GitHub Pages is a legacy optional target, not an unresolved infrastructure decision or the active production authority.
 
 ## Analytics boundary
 

@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node scripts/start-static.mjs",
     "typecheck": "next typegen && tsc --noEmit",
+    "test": "node --test scripts/*.test.cjs",
     "validate:site": "node scripts/validate-site-readiness.cjs"
   },
   "engines": {
@@ -16,7 +17,8 @@
   "dependencies": {
     "next": "16.4.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "serve-handler": "6.1.7"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

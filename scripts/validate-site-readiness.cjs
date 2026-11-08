@@ -37,7 +37,7 @@ const expected = [
   "shamar:conversion",
   "lead_submit",
   "PASSPORT_INTEGRATION_GAP",
-  "DOMAIN = DECISION_PENDING",
+  "DOMAIN = ACTIVE: https://pdv.shamarsuite.com.br",
   "Search Console",
   "BreadcrumbList",
   "FAQPage",
