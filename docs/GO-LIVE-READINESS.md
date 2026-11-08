@@ -42,9 +42,9 @@ The form keeps only the short commercial fields required for first contact.
 
 ## Passport
 
-PASSPORT_INTEGRATION_GAP = real Passport URL/contract is not present in this repository.
+PASSPORT_LOGIN = ACTIVE: https://passport.shamarsuite.com.br/login.
 
-`/login` remains a visual handoff boundary and does not create local identity, fake account authority or demo credentials.
+`/login` encaminha para o serviço oficial de identidade da Shamar Suite e mantém o contato comercial como fallback. O site não cria identidade, sessão ou credencial local. A integração profunda do produto — retorno autenticado, client OAuth/OIDC específico do PDV e autorização de recursos — não está afirmada por este site e permanece sob o contrato do Passport.
 
 ## Search Console
 

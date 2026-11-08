@@ -36,7 +36,7 @@ const expected = [
   "Você não precisa recadastrar tudo na mão",
   "shamar:conversion",
   "lead_submit",
-  "PASSPORT_INTEGRATION_GAP",
+  "PASSPORT_LOGIN = ACTIVE: https://passport.shamarsuite.com.br/login",
   "DOMAIN = ACTIVE: https://pdv.shamarsuite.com.br",
   "Search Console",
   "BreadcrumbList",
